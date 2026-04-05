@@ -1,0 +1,12 @@
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Local Database
+test.db
+
+# Execution Logs
+logs.txt
+
+# Environment variables
+.env

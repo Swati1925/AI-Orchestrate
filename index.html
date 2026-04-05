@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Integration Engine</title>
+</head>
+<body>
+    <h2>Integration Generator</h2>
+
+    <input id="text" placeholder="Enter requirement" size="60">
+    <button onclick="send()">Generate</button>
+
+    <pre id="output"></pre>
+
+    <script>
+        async function send() {
+            const text = document.getElementById("text").value;
+            const res = await fetch(`http://127.0.0.1:8000/generate?text=${text}&tenant_id=demo`);
+            const data = await res.json();
+            document.getElementById("output").innerText = JSON.stringify(data, null, 2);
+        }
+    </script>
+</body>
+</html>
